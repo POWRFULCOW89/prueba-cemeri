@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Prueba técnica CEMERI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Recreación de uno de los artículos de [CEMERI](https://cemeri.org/enciclopedia/que-es-el-ifad/) como parte de una prueba técnica en el proceso de selección para prácticas profesionales.
 
-## Available Scripts
+## Instalación
 
-In the project directory, you can run:
+1. Clonar el repositorio
 
-### `npm start`
+    ```bash
+    gh repo clone POWRFULCOW89/prueba-cemeri
+    ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Instalar las dependencias:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    ```bash
+    npm i
+    ```
 
-### `npm test`
+3. Iniciar la aplicación con:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    ```bash
+    npm start
+    ```
 
-### `npm run build`
+## Descripción técnica
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Consiste en una aplicación en React haciendo uso de componentes y módulos CSS para evitar la contaminación de estilos globales, sin usar librerías como Bootstrap. Para recrear el sitio, se usa la librería FontAwesome para suplir íconos. Por motivos de tiempo, se omite la implementación de estilos responsivos. Para renderizar los artículos, se utiliza React Markdown, que convierte una cadena de texto en formato Markdown en elementos del DOM. Se asume que la estructura de un artículo consiste en la siguiente:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```json
+{
+    "title": "string",
+    "img": "string",
+    "date": "string",
+    "author": "string",
+    "cites": ["string"],
+    "references": ["string"],
+    "content": "string",
+    "contentPreview": "string"
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Líneas de mejora
 
-### `npm run eject`
+Para terminar la implementación del sitio, es necesario:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Conectar el componente de [Article](./src/components/Article.js) a la API que provee los artículos,
+  - a través de parámetros de ruta, efectos secundarios y llamadas `fetch`, y adaptar el código a la estructura de los mismos.
+- Conectar los enlaces a los elementos ancla.
+- Habilitar el formulario para comentarios.
+- Terminar de pulir estilos para igualar aquellos del sitio.
